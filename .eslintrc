@@ -1,0 +1,10 @@
+{
+  "extends": "equimper",
+  "rules": {
+    "indent": [
+      "error",
+      4
+    ],
+    "no-throw-literal": 0
+  }
+}

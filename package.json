@@ -1,0 +1,33 @@
+{
+  "name": "fortnox-api",
+  "version": "1.0.0",
+  "description": "Fortnox API Wrapper",
+  "main": "lib/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Simskii/Fortnox-Api"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "keywords": [
+    "fortnox",
+    "api"
+  ],
+  "author": "Simon Lundh",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^1.7.3"
+  },
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  }
+}
