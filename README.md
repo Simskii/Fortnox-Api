@@ -5,7 +5,7 @@ http://developer.fortnox.se/getting-started/
 
 ## Installation
 
-    $ npm install or yarn install
+    $ npm install fortnox or yarn install fortnox
 
 ## Get a developer account
 
@@ -35,3 +35,18 @@ curl -X "GET" "https://api.fortnox.se/3/" \
      -H "Content-Type: application/json" \
      -H "Accept: application/json"
 ```
+
+## Usage
+
+### Create a new fortnox api instance
+```
+const fortnox = require('fortnox')
+const client = new Fortnox('secret', 'accessToken')
+```
+
+### Get Customers
+```
+const customers = await client.getCustomers()    
+```
+
+
