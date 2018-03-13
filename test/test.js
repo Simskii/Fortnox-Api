@@ -1,30 +1,30 @@
 
-var expect = require('chai').expect;
+const expect = require('chai').expect;
 require('dotenv').load();
-var FortnoxClient = require('../lib/index');
+const FortnoxClient = require('../lib/index');
 
-describe('FortnoxClient', function() {
+describe('FortnoxClient', () => {
     const fortnox = new FortnoxClient(process.env.SECRET, process.env.ACCESSTOKEN);
-    it('should get list of customers', async function() {
-        var result = await fortnox.getCustomers();
+    it('should get list of customers', async () => {
+        const result = await fortnox.getCustomers();
         expect(result.Customers).to.be.an('array');
     });
 
-    it('should create a new customer', async function() {
+    it('should create a new customer', async () => {
         const customer = {
-            Name: 'Simon testar ett api 123',
+            Name: 'Customer AB',
         }
         const result = await fortnox.createCustomer(customer);
         expect(result.Customer).to.be.an('object');
     });
 
-    it('should get list of articles', async function() {
-        var result = await fortnox.getArticles();
+    it('should get list of articles', async () => {
+        const result = await fortnox.getArticles();
         expect(result.Articles).to.be.an('array');
     });
 
-    it('should get list of orders', async function() {
-        var result = await fortnox.getOrders();
+    it('should get list of orders', async () => {
+        const result = await fortnox.getOrders();
         expect(result.Orders).to.be.an('array');
     });
 });
