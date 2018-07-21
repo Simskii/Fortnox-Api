@@ -1,4 +1,4 @@
-https://circleci.com/gh/Simskii/Fortnox-Api/.png?circle-token=562a1800440e49a2a93f33c29c717fd7ebf01655
+[![CircleCI](https://circleci.com/gh/Simskii/Fortnox-Api.svg?style=shield)]
 # Fortnox Javascript API wrapper
 
 Unofficial Javascript wrapper for Fortnox API
