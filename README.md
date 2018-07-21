@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/Simskii/Fortnox-Api.svg?style=shield)]
+![CircleCI](https://circleci.com/gh/Simskii/Fortnox-Api.svg?style=shield)
 # Fortnox Javascript API wrapper
 
 Unofficial Javascript wrapper for Fortnox API
