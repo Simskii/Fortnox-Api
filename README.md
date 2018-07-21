@@ -1,4 +1,5 @@
 ![CircleCI](https://circleci.com/gh/Simskii/Fortnox-Api.svg?style=shield)
+![npm version](https://badge.fury.io/js/fortnox.svg)
 # Fortnox Javascript API wrapper
 
 Unofficial Javascript wrapper for Fortnox API
