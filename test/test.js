@@ -58,10 +58,11 @@ describe("FortnoxClient", () => {
         const pricelist = {
             Code: chance.string({ length: 4, pool: "abcefghijklmonpqrstuv" }),
             Description: "Prislista AB",
-            Comments: "En prislista för privatpersoner"
+            Comments: "En prislista för privatpersoner",
         };
         const result = await fortnox.createPriceList(pricelist);
         expect(result.PriceList).to.be.an("object");
+
         mockpricelist = result.PriceList;
     });
 
