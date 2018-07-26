@@ -1,6 +1,6 @@
 {
     "name": "fortnox",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "description": "Fortnox API Wrapper",
     "main": "lib/index.js",
     "directories": {
