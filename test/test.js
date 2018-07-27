@@ -8,6 +8,7 @@ const FortnoxClient = require("../lib/index");
 
 var mockpricelist;
 var mockCustomer;
+var mockArticle;
 const fortnox = new FortnoxClient(
     process.env.CLIENT_SECRET,
     process.env.ACCESS_TOKEN
@@ -42,6 +43,40 @@ describe("FortnoxClient", () => {
     it("should get list of articles", async () => {
         const result = await fortnox.getArticles();
         expect(result.Articles).to.be.an("array");
+    });
+
+    it("should create a new article", async () => {
+        const article = {
+            ArticleNumber: chance.string({ length: 4, pool: "ABCDEFGHIJKLMNO" }),
+            Description: chance.word()
+        };
+        const result = await fortnox.createArticle(article);
+        mockArticle = result.Article;
+        expect(result.Article).to.be.an("object");
+    });
+
+    it("should get a article by id", async () => {
+        const { Article } = await fortnox.getArticleById(
+            mockArticle.ArticleNumber
+        );
+        expect(Article).to.be.an("object");
+    });
+
+    it("should update an article by id", async () => {
+        let s = chance.word();
+        const r = await fortnox.updateArticle(mockArticle.ArticleNumber, {
+            ArticleNumber: mockArticle.ArticleNumber,
+            Description: s
+        });
+        const { Article } = await fortnox.getArticleById(
+            mockArticle.ArticleNumber
+        );
+        expect(Article.Description).to.equal(s)
+    });
+
+    it("should delete an article", async () => {
+        const res = await fortnox.removeArticle(mockArticle.ArticleNumber);
+        expect(res).to.be.empty;
     });
 
     it("should get list of orders", async () => {
