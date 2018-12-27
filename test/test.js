@@ -5,18 +5,35 @@ const chance = new Chance();
 
 require("dotenv").load();
 const FortnoxClient = require("../lib/index");
+const util = require('../lib/utils')
 
 var mockpricelist;
 var mockCustomer;
 var mockArticle;
+
 const fortnox = new FortnoxClient(
     process.env.CLIENT_SECRET,
     process.env.ACCESS_TOKEN
 );
 describe("FortnoxClient", () => {
+    it("should get list of customers with params", async () => {
+        var url = `https://api.fortnox.se/3`;
+        const search = {lastModified: '2018-01-01'}
+        const response = util.generateUrl(url + '/customers', {
+            page: 1,
+            offset: 2,
+            limit: 2,
+            sortorder: 'ascending',
+            ...search,
+        })
+        expect(true).to.equal(true)
+    });
     it("should get list of customers", async () => {
-        const result = await fortnox.getCustomers(1, 2);
+
+        const result = await fortnox.getCustomers(1, 2, null, 'ascending', 2);
+        console.log(result)
         expect(result.Customers).to.be.an("array");
+        expect(result.Customers).to.have.length(2)
     });
 
     it("should create a new customer", async () => {
